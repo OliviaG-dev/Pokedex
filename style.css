@@ -4,3 +4,57 @@
     padding: 0;
 }
 
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #333;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    padding: 1.5rem 0;
+    color:#F1F1F1
+}
+
+.search__pokemon{
+    max-width: 43.7rem;
+    width: 70%;
+    margin: 1.8rem auto;
+    position: relative;
+    display: flex;
+    min-width: 28.1rem;
+}
+.inp_group {
+    width: 100%;
+}
+
+.search__pokemon input {
+    width: 100%;
+    padding: 0.9rem;
+    border: none;
+    border-radius: 0.18rem;
+    font-size: 1.2rem;
+}
+
+.search__pokemon label {
+    position: absolute;
+    color:#333;
+    top: 50%;
+    transform: translateY(-50%);
+    padding-left: 0.5rem;
+    transition: all 0.3s ease-in;
+}
+
+.search__pokemon button {
+    margin-left: 0.31rem;
+    padding: 0.93rem;
+}
+
+/* animation input */
+
+.search__pokemon:focus-within label,
+.search__pokemon.input__active label {
+    top: -0.93rem;
+    padding-left: 0.31rem;
+    color: #f1f1f1;
+}
