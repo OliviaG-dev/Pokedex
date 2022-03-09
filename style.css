@@ -35,8 +35,9 @@ h1 {
     width: 100%;
     padding: 0.9rem;
     border: none;
-    border-radius: 0.18rem;
+    border-radius: 0.18rem 0 0 0.18rem;
     font-size: 1.2rem;
+    background-color: #F1F1F1;
 }
 
 .search__pokemon label {
@@ -48,9 +49,21 @@ h1 {
     transition: all 0.3s ease-in;
 }
 
-.search__pokemon button {
-    margin-left: 0.31rem;
+.search__pokemon div {
+    margin-left: 0.25rem;
+    border-radius: 0 0.18rem 0.18rem 0;
     padding: 0.93rem;
+    width: 4rem;
+    height: 4rem;
+    background-color: #F1F1F1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search__img {
+    height: 2.5rem;
+    width: 2.5rem;
 }
 
 /* animation input */
@@ -100,3 +113,4 @@ ul {
 .list__pokemon p {
     font-size: 1.12em;
 }
+
