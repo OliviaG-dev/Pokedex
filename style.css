@@ -1,4 +1,6 @@
-*, ::before, ::after {
+*,
+::before,
+::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -13,10 +15,10 @@ body {
 h1 {
     text-align: center;
     padding: 1.5rem 0;
-    color:#F1F1F1
+    color: #F1F1F1
 }
 
-.search__pokemon{
+.search__pokemon {
     max-width: 43.7rem;
     width: 70%;
     margin: 1.8rem auto;
@@ -24,6 +26,7 @@ h1 {
     display: flex;
     min-width: 28.1rem;
 }
+
 .inp_group {
     width: 100%;
 }
@@ -38,7 +41,7 @@ h1 {
 
 .search__pokemon label {
     position: absolute;
-    color:#333;
+    color: #333;
     top: 50%;
     transform: translateY(-50%);
     padding-left: 0.5rem;
@@ -57,4 +60,43 @@ h1 {
     top: -0.93rem;
     padding-left: 0.31rem;
     color: #f1f1f1;
+}
+
+/*List card */
+
+.container {
+    width: 70%;
+    max-width: 68.7rem;
+    height: auto;
+    margin: 0 auto;
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.list__pokemon li {
+    width: 15.6rem;
+    height: auto;
+    padding: 0.93rem;
+    margin: 0.31rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 2%;
+    border: 0.3rem solid;
+    
+}
+
+.list__pokemon h5 {
+    font-size: 1.18em;
+}
+
+.list__pokemon p {
+    font-size: 1.12em;
 }
