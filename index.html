@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="./assets/pokeball-icone.png">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <h1>Bienvenue dans le Pokedex !</h1>
@@ -15,7 +17,11 @@
     <from class="search__pokemon">
         <label for="search">Chercher un pokémon</label>
         <input type="text" id="search">
-        <div><img class ="search__img" src="assets/search.svg" alt="icone de recherche"></div>
+        <span><img class="search__img" src="assets/search.svg" alt="icone de recherche"></span>
+
+        <div class="loader">
+            <div class="loader__dot"></div>
+        </div>
     </from>
 
     <div class="container">
@@ -25,4 +31,5 @@
 
     <script src="app.js"></script>
 </body>
+
 </html>

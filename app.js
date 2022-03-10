@@ -2,6 +2,7 @@ let allPokemon = [];
 let arrayFinish = [];
 const listPokemon = document.querySelector(".list__pokemon");
 const searchInput = document.querySelector(".search__pokemon input");
+const loading = document.querySelector(".loader");
 
 const typesBackground = {
   grass: `linear-gradient(75deg, rgba(242,242,242,1) 0%, rgba(120,200,80,1) 100%)`,
@@ -23,7 +24,6 @@ const typesBackground = {
 };
 
 const typesBorder = {
-
   grass: "#78c850",
   ground: "#E2BF65",
   dragon: "#6F35FC",
@@ -40,7 +40,7 @@ const typesBorder = {
   rock: "#B6A136",
   ghost: "#735797",
   ice: "#96D9D6",
-}
+};
 
 function pokemonFetch() {
   fetch("https://pokeapi.co/api/v2/pokemon?limit=151")
@@ -62,7 +62,6 @@ function allPokemonFetch(data) {
   fetch(url)
     .then((reponse) => reponse.json())
     .then((pokemonData) => {
-      //console.log(pokemonData);
       objPokemonFull.picture = pokemonData.sprites.front_default;
       objPokemonFull.type = pokemonData.types[0].type.name;
       objPokemonFull.id = pokemonData.id;
@@ -70,7 +69,6 @@ function allPokemonFetch(data) {
       fetch(`https://pokeapi.co/api/v2/pokemon-species/${namePokemon}`)
         .then((response) => response.json())
         .then((pokemonData) => {
-          //console.log(pokemonData);
           objPokemonFull.name = pokemonData.names[4].name;
           allPokemon.push(objPokemonFull);
 
@@ -81,7 +79,6 @@ function allPokemonFetch(data) {
                 return a.id - b.id;
               })
               .slice(0, 21);
-            //console.log(arrayFinish);
 
             createCard(arrayFinish);
           }
@@ -109,14 +106,13 @@ function createCard(arr) {
     card.appendChild(idCard);
 
     listPokemon.appendChild(card);
+    loading.style.display = "none";
   }
 }
 
 // Sroll infini
 window.addEventListener('scroll', () => {
-
   const {scrollTop, scrollHeight, clientHeight} = document.documentElement;
-
   if(clientHeight + scrollTop >= scrollHeight - 20) {
     addPokemon(6);
   }
@@ -158,11 +154,7 @@ function search(){
       allLi[i].style.display = "none";
     }
   }
-
-
 }
-
-
 
 //Animation input
 

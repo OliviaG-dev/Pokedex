@@ -49,7 +49,7 @@ h1 {
     transition: all 0.3s ease-in;
 }
 
-.search__pokemon div {
+.search__pokemon span {
     margin-left: 0.25rem;
     border-radius: 0 0.18rem 0.18rem 0;
     padding: 0.93rem;
@@ -66,7 +66,7 @@ h1 {
     width: 2.5rem;
 }
 
-/* animation input */
+/******************************* animation input *******************************/
 
 .search__pokemon:focus-within label,
 .search__pokemon.input__active label {
@@ -75,7 +75,7 @@ h1 {
     color: #f1f1f1;
 }
 
-/*List card */
+/******************************* list cards *******************************/
 
 .container {
     width: 70%;
@@ -103,7 +103,6 @@ ul {
     flex-direction: column;
     border-radius: 2%;
     border: 0.3rem solid;
-    
 }
 
 .list__pokemon h5 {
@@ -114,3 +113,38 @@ ul {
     font-size: 1.12em;
 }
 
+/******************************* Loader *******************************/
+
+.loader {
+    position: absolute;
+    top: 15.5rem;
+    left: 50%;
+    display: flex;
+    width: 10rem;
+    height: 10rem;
+    border: 1rem solid;
+    border-color: #ee1515 transparent #f0f0f0 transparent;
+    border-radius: 50%;
+    animation: tourne 1.2s linear infinite;
+}
+
+.loader__dot {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color:#f0f0f0;
+    border: #222224 0.20rem solid;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes tourne {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
