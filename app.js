@@ -3,6 +3,7 @@ let arrayFinish = [];
 const listPokemon = document.querySelector(".list__pokemon");
 const searchInput = document.querySelector(".search__pokemon input");
 const loading = document.querySelector(".loader");
+const addbutton = document.querySelector(".button");
 
 const typesBackground = {
   grass: `linear-gradient(75deg, rgba(242,242,242,1) 0%, rgba(120,200,80,1) 100%)`,
@@ -128,6 +129,15 @@ function addPokemon(nb) {
   createCard(arrToAdd);
   index += nb;
 }
+
+//Button "see 151 pokémons"
+
+addbutton.addEventListener('click', () => {
+  if(index < 151) {
+    addPokemon(130);
+  }
+});
+
 
 //Search
 searchInput.addEventListener('keyup', search);

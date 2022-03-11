@@ -1,3 +1,7 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap');
+
+
 *,
 ::before,
 ::after {
@@ -7,37 +11,41 @@
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     background: #333;
     color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 h1 {
+    font-family: 'Comfortaa', cursive;
     text-align: center;
-    padding: 1.5rem 0;
-    color: #F1F1F1
+    padding: 2rem 0;
+    color: #F1F1F1;
+    font-size: 2em;
+}
+
+.container__search {
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
 .search__pokemon {
-    max-width: 43.7rem;
-    width: 70%;
-    margin: 1.8rem auto;
+    margin: 1.8rem 0 1.48rem 0;
     position: relative;
     display: flex;
-    min-width: 28.1rem;
-}
-
-.inp_group {
-    width: 100%;
 }
 
 .search__pokemon input {
-    width: 100%;
     padding: 0.9rem;
     border: none;
     border-radius: 0.18rem 0 0 0.18rem;
     font-size: 1.2rem;
     background-color: #F1F1F1;
+    width: 45rem;
 }
 
 .search__pokemon label {
@@ -82,6 +90,7 @@ h1 {
     max-width: 68.7rem;
     height: auto;
     margin: 0 auto;
+    position: relative;
 }
 
 ul {
@@ -112,13 +121,19 @@ ul {
 .list__pokemon p {
     font-size: 1.12em;
 }
+/******************************* Button *******************************/
+
+.button{
+    display: none;
+}
+
 
 /******************************* Loader *******************************/
 
 .loader {
     position: absolute;
     top: 15.5rem;
-    left: 50%;
+    left: 25%;
     display: flex;
     width: 10rem;
     height: 10rem;
@@ -126,6 +141,7 @@ ul {
     border-color: #ee1515 transparent #f0f0f0 transparent;
     border-radius: 50%;
     animation: tourne 1.2s linear infinite;
+    z-index: 99;
 }
 
 .loader__dot {
@@ -146,5 +162,85 @@ ul {
     }
     100%{
         transform: rotate(360deg);
+    }
+}
+/******************************* arrow top *******************************/
+footer {
+    position: fixed;
+    bottom: 0;
+    right: 1rem;
+}
+
+
+footer img {
+    width: 4rem;
+    height: 4rem;
+    margin-right: 0.8rem; 
+}
+
+/******************************* Media Queries *******************************/
+
+@media only screen and (max-width: 560px) {
+
+    body {
+    display: flex;
+    width: 100vw;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    }
+    
+    .list__pokemon li {
+        width: 100vw;
+    }
+
+    .search__pokemon input {
+        max-width: max-content;
+    }
+
+    .container {
+        width: 100vw;
+    }
+
+    .loader {
+        top: 10.5rem;
+        left: 25%;  
+    }
+
+    h1 {
+        line-height: 1.6;
+    }
+
+    .button{
+        display: flex;
+        padding: 0.6rem;
+        margin-bottom: 1.5rem;
+        border-radius: 2rem;
+        background-color:#F1F1F1;
+        cursor: pointer;
+    }
+
+    footer img {
+        background-color: #333;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 3%;
+    }
+
+    footer {
+        right: 0;
+    }  
+}
+
+
+@media only screen and (min-width: 560px) and (max-width: 992px) {
+
+    .loader {
+        top: 10.5rem;
+        left: 38%;
+    }
+
+    .search__pokemon input {
+        width: 20rem;
     }
 }
